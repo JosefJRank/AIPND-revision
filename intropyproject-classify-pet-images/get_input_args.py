@@ -40,4 +40,11 @@ def get_input_args():
     """
     # Replace None with parser.parse_args() parsed argument collection that 
     # you created with this function 
-    return None
+
+    parser = argparse.ArgumentParser(prog="DogImageChecker", description="You enter a directory of files, a classifier model and a zextfile of dognames and the DogImageChecker will check the images and figure out which breed it is")
+    parser.add_argument('--dir', help='enter the directory of the dog images (default: pet_images)', default='pet_images')
+    parser.add_argument('--arch', help='CNN Model Architecture: vgg, alexnet or resnet (default: vgg)', default='vgg')
+    parser.add_argument('--dogfile', help='Text File with Dog Names', default='dognames.txt')
+    return parser.parse_args()
+
+
