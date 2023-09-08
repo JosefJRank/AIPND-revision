@@ -1,0 +1,16 @@
+##########################################################################
+# Results of the Imageclasification of dog breeds by the model:  resnet  #
+##########################################################################
+
+* Number of Images                                     : 40  
+* Number of Dog Images                                 : 30  
+* Number of non Dog Images                             : 10  
+* Number of matching Clasification                     : 33  
+* Percentage of correct Dog Clasification              : 100.0
+* Percentage of correct not Dog Clasification          : 90.0
+* Percentage of correct Breed Clasification            : 90.0
+* Percentage of correctly matching Clasification       : 82.5
+* Number of incorrect Breed Clasification              : 3   
+* Number of incorrect Dog Clasification                : 0   
+
+** Total Elapsed Runtime: 0:0:1.32

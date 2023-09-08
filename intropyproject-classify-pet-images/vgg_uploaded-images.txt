@@ -1,0 +1,66 @@
+
+     MATCH:
+
+       Golden_Retriever_10.jpg: 
+Real:           golden retriever   Classifier:               golden retriever  
+PetLabelDog: 1  ClassLabelDog: 1
+
+               persian_cat.jpg: 
+Real:                persian cat   Classifier:               persian cat, cat  
+PetLabelDog: 0  ClassLabelDog: 0
+
+                 Vizsla_01.jpg: 
+Real:                     vizsla   Classifier:      vizsla, hungarian pointer  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                 Vizsla_02.jpg: 
+Real:                     vizsla   Classifier:      vizsla, hungarian pointer  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                 Vizsla_03.jpg: 
+Real:                     vizsla   Classifier:      vizsla, hungarian pointer  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                 Vizsla_04.jpg: 
+Real:                     vizsla   Classifier:      vizsla, hungarian pointer  
+PetLabelDog: 1  ClassLabelDog: 1
+
+ NOT A MATCH:
+
+                 BMW_M3_01.jpg: 
+Real:                     bmw m3   Classifier:          sports car, sport car  
+PetLabelDog: 0  ClassLabelDog: 0
+
+              Car_catstyle.jpg: 
+Real:               car catstyle   Classifier:    racer, race car, racing car  
+PetLabelDog: 0  ClassLabelDog: 0
+
+                 DogStatue.jpg: 
+Real:                  dogstatue   Classifier:                      earthstar  
+PetLabelDog: 0  ClassLabelDog: 0
+
+# Total Images 9 # Matches: 6 # NOT Matches: 3
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  9  N Dog Images:  5  N NotDog Images:  4 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed: 100.0
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  9  N Dog Images:  5  N NotDog Images:  4 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed: 100.0
+##########################################################################
+# Results of the Imageclasification of dog breeds by the model:   vgg    #
+##########################################################################
+
+* Number of Images                                     : 9   
+* Number of Dog Images                                 : 5   
+* Number of non Dog Images                             : 4   
+* Number of matching Clasification                     : 6   
+* Percentage of correct Dog Clasification              : 100.0
+* Percentage of correct not Dog Clasification          : 100.0
+* Percentage of correct Breed Clasification            : 100.0
+* Percentage of correctly matching Clasification       : 66.7
+* Number of incorrect Breed Clasification              : 0   
+* Number of incorrect Dog Clasification                : 0   
+
+** Total Elapsed Runtime: 0:0:1.2
