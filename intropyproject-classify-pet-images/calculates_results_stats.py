@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # */AIPND-revision/intropyproject-classify-pet-images/calculates_results_stats.py
 #                                                                             
-# PROGRAMMER:
-# DATE CREATED:                                  
+# PROGRAMMER: Josef Rank    
+# DATE CREATED: 22.07.2023                         
 # REVISED DATE: 
 # PURPOSE: Create a function calculates_results_stats that calculates the 
 #          statistics of the results of the programrun using the classifier's model 
@@ -36,7 +36,7 @@
 #            pct_correct_dogs - percentage of correctly classified dogs
 #            pct_correct_breed - percentage of correctly classified dog breeds
 #            pct_correct_notdogs - percentage of correctly classified NON-dogs
-#
+# 
 ##
 # TODO 5: Define calculates_results_stats function below, please be certain to replace None
 #       in the return statement with the results_stats_dic dictionary that you create 
@@ -70,4 +70,62 @@ def calculates_results_stats(results_dic):
     """        
     # Replace None with the results_stats_dic dictionary that you created with 
     # this function 
-    return None
+
+#                       index 0 = pet image label (string)
+#                       index 1 = classifier label (string)
+#                       index 2 = 1/0 (int)  where 1 = match between pet image and classifier labels
+#                       index 3 = 1/0 (int)  where 1 = pet image 'is-a' dog and 
+#                             0 = pet Image 'is-NOT-a' dog. 
+#                       index 4 = 1/0 (int)  where 1 = Classifier classifies image 
+#                             'as-a' dog and 0 = Classifier classifies image  
+#                             'as-NOT-a' dog.
+
+
+    n_images =0
+    n_dogs_img =0
+    n_notdogs_img =0
+    n_match =0
+    n_correct_dogs =0
+    n_correct_notdogs =0
+    n_correct_breed =0
+    
+    for Image in results_dic:
+        n_images +=1
+        # n_dogs_img is incremented if results_dic[Image][index 3] is 1
+        n_dogs_img += results_dic[Image][3]
+
+        # n_notdogs_img is incremented if results_dic[Image][index 3] is 0
+        n_notdogs_img += 1-1*results_dic[Image][3] 
+
+        # n_match is incremented if results_dic[Image][index 2] is 1
+        n_match += results_dic[Image][2]
+
+        # n_correct_dogs is incremented if results_dic[Image] Index 3 and Index 4 is 1
+        n_correct_dogs += results_dic[Image][3]*results_dic[Image][4]
+
+        # n_correct_notdogs is incremented if results_dic[Image] Index 3 and Index 4 is 0 
+        n_correct_notdogs += (1-1*results_dic[Image][3])*(1-1*results_dic[Image][4])
+
+        # n_correct_breed is incremented if results_dic[Image] Index 2, Index 3 and Index 4 is 1 ()
+        n_correct_breed += results_dic[Image][2]*results_dic[Image][3]*results_dic[Image][4]
+
+    pct_match = n_match / n_images *100
+    pct_correct_dogs  =  n_correct_dogs/ n_dogs_img *100
+    pct_correct_breed = n_correct_breed/ n_dogs_img *100
+    pct_correct_notdogs = n_correct_notdogs/n_notdogs_img *100
+    results_stats_dic = {'n_images': n_images,
+                                'n_dogs_img': n_dogs_img,
+                                'n_notdogs_img': n_notdogs_img,
+                                'n_match': n_match,
+                                'n_correct_dogs': n_correct_dogs,
+                                'n_correct_notdogs': n_correct_notdogs,
+                                'n_correct_breed': n_correct_breed,
+                                'pct_match': pct_match,
+                                'pct_correct_dogs': pct_correct_dogs,
+                                'pct_correct_breed': pct_correct_breed,
+                                'pct_correct_notdogs': pct_correct_notdogs}
+
+
+
+
+    return results_stats_dic
