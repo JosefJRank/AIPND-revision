@@ -46,14 +46,19 @@ def get_pet_labels(image_dir):
     results_dic = dict()
     
     FileNames = listdir(image_dir)
+    FileEnding = '.jpg'
+    
     for File in FileNames:
-        ResultName = ''
-        Pet= File.removesuffix('.jpg').strip('0123456789')
-        Pet = Pet.split('_')
-        Pet = list(filter(None,Pet))
-        ResultName = (' '.join(Pet)).lower()
-                    
-        results_dic[File] = [ResultName]
+
+        if not File.startswith('.'):   
+                     
+            # Hidden Files were skipped by if statement
+            ResultName = ''        
+            Pet=File[:(-1*len(FileEnding))].strip('0123456789')
+            Pet = Pet.split('_')
+            Pet = list(filter(None,Pet))
+            ResultName = (' '.join(Pet)).lower()                    
+            results_dic[File] = [ResultName]
 
     #print(results_dic)    
     return results_dic
