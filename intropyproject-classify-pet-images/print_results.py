@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # */AIPND-revision/intropyproject-classify-pet-images/print_results.py
 #                                                                             
-# PROGRAMMER: 
-# DATE CREATED:
+# PROGRAMMER: Josef Rank
+# DATE CREATED: 21.07.2023
 # REVISED DATE: 
 # PURPOSE: Create a function print_results that prints the results statistics
 #          from the results statistics dictionary (results_stats_dic). It 
@@ -62,5 +62,26 @@ def print_results(results_dic, results_stats_dic, model,
     Returns:
            None - simply printing results.
     """    
-    None
+    
+    print('##########################################################################')
+    print('# Results of the Imageclasification of dog breeds by the model: {:^8s} #'.format(model))
+    print('##########################################################################')
+    print('')
+    print('* Number of Images                                     : {:<4d}'.format(results_stats_dic.get('n_images')))
+    print('* Number of Dog Images                                 : {:<4d}'.format(results_stats_dic.get('n_dogs_img')))
+    print('* Number of non Dog Images                             : {:<4d}'.format(results_stats_dic.get('n_notdogs_img')))
+    print('* Number of matching Clasification                     : {:<4d}'.format(results_stats_dic.get('n_match')))
+    print('* Percentage of correct Dog Clasification              : {:<3.1f}'.format(results_stats_dic.get('pct_correct_dogs')))
+    print('* Percentage of correct not Dog Clasification          : {:<3.1f}'.format(results_stats_dic.get('pct_correct_notdogs'))) 
+    print('* Percentage of correct Breed Clasification            : {:<3.1f}'.format(results_stats_dic.get('pct_correct_breed'))) 
+    print('* Percentage of correctly matching Clasification       : {:<3.1f}'.format(results_stats_dic.get('pct_match')))
+
+    if print_incorrect_breed:
+        n_incorrect_breed = results_stats_dic['n_correct_dogs'] - results_stats_dic['n_correct_breed']
+        print('* Number of incorrect Breed Clasification              : {:<4d}'.format(n_incorrect_breed))
+
+    if print_incorrect_dogs:
+        n_incorrect_dogs = results_stats_dic['n_dogs_img'] - results_stats_dic['n_correct_dogs']
+        print('* Number of incorrect Dog Clasification                : {:<4d}'.format(n_incorrect_dogs))
+
                 
