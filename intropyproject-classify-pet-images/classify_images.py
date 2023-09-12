@@ -65,12 +65,11 @@ def classify_images(images_dir, results_dic, model):
      Returns:
            None - results_dic is mutable data type so no return needed.         
     """
-    for dogpic in results_dic:
-        #results_dic[dogpic].append([classifier((images_dir + '/' + dogpic), model).lower()])
-        results_dic[dogpic].append(classifier((images_dir + '/' + dogpic), model).lower())
-        if results_dic[dogpic][0] in results_dic[dogpic][1]:
-            results_dic[dogpic].append(int(1))
-        else:
-            results_dic[dogpic].append(int(0))     
+    for dogpic, data in results_dic.items():
+        #append the value list with the classifier result
+        data.append((classifier((images_dir + '/' + dogpic), model).lower()).strip())
+        #check if the dogbreed of the filename is mentioned in the dogbreed of the classifier
+        data.append(int(data[0] in data[1])) #
+ 
 
-    None 
+     
