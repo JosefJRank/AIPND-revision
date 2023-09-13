@@ -42,9 +42,9 @@ def get_input_args():
     # you created with this function 
 
     parser = argparse.ArgumentParser(prog="DogImageChecker", description="You enter a directory of files, a classifier model and a zextfile of dognames and the DogImageChecker will check the images and figure out which breed it is")
-    parser.add_argument('--dir', help='enter the directory of the dog images (default: pet_images)', default='pet_images')
-    parser.add_argument('--arch', help='CNN Model Architecture: vgg, alexnet or resnet (default: vgg)', default='vgg')
-    parser.add_argument('--dogfile', help='Text File with Dog Names', default='dognames.txt')
+    parser.add_argument('--dir', type=str, help='enter the directory of the dog images (default: pet_images)', default='pet_images')
+    parser.add_argument('--arch', type=str, help='CNN Model Architecture: vgg, alexnet or resnet (default: vgg)', default='vgg')
+    parser.add_argument('--dogfile', type=str, help='Text File with Dog Names', default='dognames.txt')
     return parser.parse_args()
 
 
