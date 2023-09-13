@@ -79,13 +79,13 @@ def print_results(results_dic, results_stats_dic, model,
     if print_incorrect_breed and (results_stats_dic['n_correct_dogs']!=results_stats_dic['n_correct_breed']) :
         print('\nIn the following pictures the dog breed was not correctly classified')        
         for dogpic, result in results_dic.items():
-            if result[2]==0 and result[3]==1:
+            if result[2]==0 and result[3]==1 and result[4] ==1:
                 print('* {:<35s} : real breed: {:<25s},  classifier result: {:<20s}'.format(dogpic, result[0], result[1]))
             
     if print_incorrect_dogs and ((results_stats_dic['n_correct_dogs'] + results_stats_dic['n_correct_notdogs']) != results_stats_dic['n_images']):
         print('\nIn the following pictures where not-dogs classified as dogs')  
         for dogpic, result in results_dic.items():
-            if result[3]==0 and result[4]==1:
+            if (result[3]==0 and result[4]==1) or (result[3]==1 and result[4]==0):
                 print('* {:<35s} : real      : {:<25s},  classifier result: {:<20s}'.format(dogpic, result[0], result[1]))
 
 

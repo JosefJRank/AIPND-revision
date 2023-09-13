@@ -22,6 +22,7 @@
 ##
 # Imports classifier function for using CNN to classify images 
 from classifier import classifier 
+import os.path
 
 # TODO 3: Define classify_images function below, specifically replace the None
 #       below by the function definition of the classify_images function. 
@@ -67,7 +68,7 @@ def classify_images(images_dir, results_dic, model):
     """
     for dogpic, data in results_dic.items():
         #append the value list with the classifier result
-        data.append((classifier((images_dir + '/' + dogpic), model).lower()).strip())
+        data.append((classifier((os.path.join(images_dir, dogpic)), model).lower()).strip())
         #check if the dogbreed of the filename is mentioned in the dogbreed of the classifier
         data.append(int(data[0] in data[1])) #
  
