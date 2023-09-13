@@ -104,3 +104,6 @@ ENV/
 .DS_Store
 
 .github/**
+/intropyproject-classify-pet-images_Submit3.zip
+/intropyproject-classify-pet-images_Submit2.zip
+/intropyproject-classify-pet-images/.vscode

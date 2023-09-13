@@ -10,7 +10,13 @@
 * Percentage of correct not Dog Clasification          : 100.0
 * Percentage of correct Breed Clasification            : 80.0
 * Percentage of correctly matching Clasification       : 75.0
-* Number of incorrect Breed Clasification              : 6   
-* Number of incorrect Dog Clasification                : 0   
 
-** Total Elapsed Runtime: 0:0:0.83
+In the following pictures the dog breed was not correctly classified
+* Beagle_01141.jpg                    : real breed: beagle                   ,  classifier result: english foxhound    
+* Beagle_01170.jpg                    : real breed: beagle                   ,  classifier result: walker hound, walker foxhound
+* Boston_terrier_02285.jpg            : real breed: boston terrier           ,  classifier result: basenji             
+* Golden_retriever_05182.jpg          : real breed: golden retriever         ,  classifier result: tibetan mastiff     
+* Golden_retriever_05257.jpg          : real breed: golden retriever         ,  classifier result: afghan hound, afghan
+* Great_pyrenees_05367.jpg            : real breed: great pyrenees           ,  classifier result: kuvasz              
+
+** Total Elapsed Runtime: 0:0:0.9
