@@ -67,19 +67,17 @@ def adjust_results4_isadog(results_dic, dogfile):
     Returns:
            None - results_dic is mutable data type so no return needed.
     """
-    DogBreeds = []
-    DogBreedsClassifier = []
+    DogBreedsClassifier = {}
     with open(dogfile) as f:
       for line in f:
          DogBreedNames = line.strip()
-         DogBreedsClassifier.append(DogBreedNames) 
+         DogBreedsClassifier.update({DogBreedNames:''}) 
          DogBreedNames = DogBreedNames.split(', ')
-         for DogBreedName in DogBreedNames:
-             DogBreeds.append(DogBreedName)  
+
 
     
     for dogpic in results_dic:
-        if results_dic[dogpic][0] in DogBreeds:
+        if results_dic[dogpic][0] in DogBreedsClassifier:
             results_dic[dogpic].append(int(1))
         else:
             results_dic[dogpic].append(int(0))
