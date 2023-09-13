@@ -74,8 +74,8 @@ def main():
     #             classify_images(in_arg.dir, results, in_arg.arch)
     # Creates Classifier Labels with classifier function, Compares Labels, 
     # and adds these results to the results dictionary - results
-    classify_images(in_arg.dir, results, in_arg.arch)
 
+    classify_images(in_arg.dir, results, in_arg.arch)
     # Function that checks Results Dictionary using results    
     #check_classifying_images(results)    
 
@@ -91,7 +91,7 @@ def main():
     adjust_results4_isadog(results, in_arg.dogfile)
 
     # Function that checks Results Dictionary for is-a-dog adjustment using results
-    check_classifying_labels_as_dogs(results)
+    #check_classifying_labels_as_dogs(results)
 
 
     # TODO 5: Define calculates_results_stats function within the file calculates_results_stats.py
@@ -103,7 +103,7 @@ def main():
     results_stats = calculates_results_stats(results)
 
     # Function that checks Results Statistics Dictionary using results_stats
-    check_calculating_results(results, results_stats)
+    #check_calculating_results(results, results_stats)
 
 
     # TODO 6: Define print_results function within the file print_results.py

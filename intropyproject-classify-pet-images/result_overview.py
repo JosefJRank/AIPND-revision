@@ -51,8 +51,8 @@ with open('check_images_result.txt','w') as Result_File:
     Result_File.write('{:<30s} | {:^10s} | {:^10s} | {:^10s} | {:^10s} | {:^10s} \n'.format('CNN Model Architecture:','Not-a-Dog','Dogs', 'Breeds', 'Match', 'Processing Time'))
     Result_File.write('{:<30s} | {:^10s} | {:^10s} | {:^10s} | {:^10s} | {:^10s} \n'.format(' ','Correct','Correct', 'Correct', 'Labels',' '))
     Result_File.write('----------------------------------------------------------------------------------------------------\n')
-    Result_File.write('{:<30s} | {:^10s} | {:^10s} | {:^10s} | {:^10s} | {:^10s} \n'.format((Result_List[0][0]),(Result_List[0][1][5]),(Result_List[0][1][4]), (Result_List[0][1][6]), (Result_List[0][1][7]), (Result_List[0][1][10])))
-    Result_File.write('{:<30s} | {:^10s} | {:^10s} | {:^10s} | {:^10s} | {:^10s} \n'.format((Result_List[1][0]),(Result_List[1][1][5]),(Result_List[1][1][4]), (Result_List[1][1][6]), (Result_List[1][1][7]), (Result_List[1][1][10])))
-    Result_File.write('{:<30s} | {:^10s} | {:^10s} | {:^10s} | {:^10s} | {:^10s} \n'.format((Result_List[2][0]),(Result_List[2][1][5]),(Result_List[2][1][4]), (Result_List[2][1][6]), (Result_List[2][1][7]), (Result_List[2][1][10])))
-
+    Result_File.write('{:<30s} | {:^10s} | {:^10s} | {:^10s} | {:^10s} | {:^10s} \n'.format((Result_List[0][0]),(Result_List[0][1][5]),(Result_List[0][1][4]), (Result_List[0][1][6]), (Result_List[0][1][7]), (Result_List[0][1][-1])))
+    Result_File.write('{:<30s} | {:^10s} | {:^10s} | {:^10s} | {:^10s} | {:^10s} \n'.format((Result_List[1][0]),(Result_List[1][1][5]),(Result_List[1][1][4]), (Result_List[1][1][6]), (Result_List[1][1][7]), (Result_List[1][1][-1])))
+    Result_File.write('{:<30s} | {:^10s} | {:^10s} | {:^10s} | {:^10s} | {:^10s} \n'.format((Result_List[2][0]),(Result_List[2][1][5]),(Result_List[2][1][4]), (Result_List[2][1][6]), (Result_List[2][1][7]), (Result_List[2][1][-1])))
+    
 
