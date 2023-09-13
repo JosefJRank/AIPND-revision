@@ -53,11 +53,12 @@ def get_pet_labels(image_dir):
         if not File.startswith('.'):   
                      
             # Hidden Files were skipped by if statement
-            ResultName = ''        
-            Pet=File[:(-1*len(FileEnding))].strip('0123456789')
-            Pet = Pet.split('_')
-            Pet = list(filter(None,Pet))
-            ResultName = (' '.join(Pet)).lower()                    
+            ResultName = ''
+            # Split filename from file extension
+            Words = File.split('.')
+            Pet =  Words[0].strip('0123456789').lower()
+            # Split the words by '_' and join them to a string and remove white spaces                   
+            ResultName = (' '.join(Pet.split('_')).strip())                   
             results_dic[File] = [ResultName]
 
     #print(results_dic)    
