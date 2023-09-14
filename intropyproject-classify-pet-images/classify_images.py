@@ -18,7 +18,7 @@
 #           that's the 'value' of the results dictionary. You will be adding the
 #           classifier label as the item at index 1 of the list and the comparison 
 #           of the pet and classifier labels as the item at index 2 of the list.
-#
+#           Git Test
 ##
 # Imports classifier function for using CNN to classify images 
 from classifier import classifier 
